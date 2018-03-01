@@ -4,23 +4,42 @@
 
 {% block main %}
     <h1>Register</h1>
+
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    {% endwith %}
+
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
             {{ form.username.label }}<br>
             {{ form.username }}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
         </p>
         <p>
-            {{ form.age.label }}<br>
-            {{ form.age }}
+            {{ form.birth_date.label }}<br>
+            {{ form.birth_date }}
+            {% for error in form.birth_date.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
         </p>
         <p>
             {{ form.pin.label }}<br>
             {{ form.pin }}
+            {% for error in form.pin.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
         </p>
         <p>
             {{ form.pin_repeat.label }}<br>
             {{ form.pin_repeat }}
+            {% for error in form.pin_repeat.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
         </p>
 
         <p>{{ form.submit() }}</p>

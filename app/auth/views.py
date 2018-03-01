@@ -13,4 +13,6 @@ def login():
 @bp.route('/register', methods = ['GET', 'POST'])
 def register():
     form = RegisterForm()
+    if form.validate_on_submit():
+        flash(f'Username {form.username.data} tried to connect with birthday {form.birth_date.data}')
     return render_template('auth/register.html', form = form)
