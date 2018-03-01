@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Sign In - {% endblock %}
+
+{% block main %}
+    <h1>Sign In</h1>
+
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    {% endwith %}
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.pin.label }}<br>
+            {{ form.pin }}
+            {% for error in form.pin.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

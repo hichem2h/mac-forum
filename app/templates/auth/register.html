@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Register - {% endblock %}
+
+{% block main %}
+    <h1>Register</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}
+        </p>
+        <p>
+            {{ form.age.label }}<br>
+            {{ form.age }}
+        </p>
+        <p>
+            {{ form.pin.label }}<br>
+            {{ form.pin }}
+        </p>
+        <p>
+            {{ form.pin_repeat.label }}<br>
+            {{ form.pin_repeat }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

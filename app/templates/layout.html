@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+   <head>
+
+      <title>{% block title %} {% endblock %}MAC Forum</title>
+      <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+
+   </head>
+   <body>
+     <div id='header'>
+
+       <div class='container'>
+
+         <div class='float-left'>
+           <a href="#"><img src="/static/images/logo.png"></a>
+         </div>
+
+         <div class='float-right'>
+           <ul>
+             <li> <a class='active' href='#'> Home </a> </li>
+             <li> <a href='#'> Contact </a> </li>
+             <li> <a href='#'> About </a> </li>
+           </ul>
+         </div>
+
+       </div>
+
+     </div>
+
+      <div id='main'>
+        <div class='container'>
+            {% block main %} {% endblock %}
+        </div>
+      </div>
+
+      <div id='footer'>
+        <div class="container">
+          <p style="float:left"> Made with love </p>
+          <p style="float:right"> <i>by lololol</i> </p>
+        </div>
+      </div>
+
+
+   </body>
+</html>
