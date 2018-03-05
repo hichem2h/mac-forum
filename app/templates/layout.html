@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+   <head>
+
+      <title>{% block title %} {% endblock %}MAC Forum</title>
+      <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+
+   </head>
+   <body>
+     <div id='header'>
+
+       <div class='container'>
+
+         <div class='float-left'>
+           <a href="#"><img src="/static/images/logo.png"></a>
+         </div>
+
+         <div class='float-right'>
+             <ul>
+                 <li> <a href="{{ url_for('main.index') }}" >Home</a> </li>
+                 {% if current_user.is_anonymous %}
+                     <li> <a href="{{ url_for('auth.login') }}"> Login</a></li>
+                     <li> <a href="{{ url_for('auth.register') }}"> Register</a></li>
+
+                 {% else %}
+                     <li> <a href="{{ url_for('auth.logout') }}"> Logout</a></li>
+                 {% endif %}
+             </ul>
+         </div>
+
+       </div>
+
+     </div>
+
+      <div id='main'>
+        <div class='container'>
+            {% block main_title %} {% endblock %}
+
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <p id="flash">{{ message }}</p>
+                {% endfor %}
+            {% endwith %}
+
+            {% block main %} {% endblock %}
+        </div>
+      </div>
+
+      <div id='footer'>
+        <div class="container">
+          <p style="float:left"> Made with love </p>
+          <p style="float:right"> <i>by lololol</i> </p>
+        </div>
+      </div>
+
+
+   </body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Register - {% endblock %}
+{% block main_title %}<h1>Register</h1>{% endblock %}
+
+{% block main %}
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.birth_date.label }}<br>
+            {{ form.birth_date }}
+            {% for error in form.birth_date.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password }}
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2 }}
+            {% for error in form.password2.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
