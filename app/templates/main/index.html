@@ -1,12 +1,7 @@
 {% extends "layout.html" %}
 
-{% block main %}
-    <h1>Main page</h1>
+{% block main_title %}<h1>Main Page</h1>{% endblock %}
 
-    {% with messages = get_flashed_messages() %}
-        {% for message in messages %}
-            <p>{{ message }}</p>
-        {% endfor %}
-    {% endwith %}
+{% block main %}
 
 {% endblock %}

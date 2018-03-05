@@ -17,11 +17,16 @@
          </div>
 
          <div class='float-right'>
-           <ul>
-             <li> <a class='active' href='#'> Home </a> </li>
-             <li> <a href='#'> Contact </a> </li>
-             <li> <a href='#'> About </a> </li>
-           </ul>
+             <ul>
+                 <li> <a href="{{ url_for('main.index') }}" >Home</a> </li>
+                 {% if current_user.is_anonymous %}
+                     <li> <a href="{{ url_for('auth.login') }}"> Login</a></li>
+                     <li> <a href="{{ url_for('auth.register') }}"> Register</a></li>
+
+                 {% else %}
+                     <li> <a href="{{ url_for('auth.logout') }}"> Logout</a></li>
+                 {% endif %}
+             </ul>
          </div>
 
        </div>
@@ -30,6 +35,14 @@
 
       <div id='main'>
         <div class='container'>
+            {% block main_title %} {% endblock %}
+
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <p id="flash">{{ message }}</p>
+                {% endfor %}
+            {% endwith %}
+
             {% block main %} {% endblock %}
         </div>
       </div>

@@ -29,3 +29,17 @@ class UserEditor:
             UserRepository(db.session).add(user)
         except:
             return 'There was an error, please try again'
+
+
+    @staticmethod
+    def get_user(username, password):
+        user = User.query.filter_by(username=username).first()
+
+        if user is None:
+            result = None
+        elif not user.check_password(password):
+            result = None
+        else:
+            result = user
+
+        return result
