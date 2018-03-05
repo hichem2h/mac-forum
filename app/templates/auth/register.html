@@ -28,16 +28,16 @@
             {% endfor %}
         </p>
         <p>
-            {{ form.pin.label }}<br>
-            {{ form.pin }}
-            {% for error in form.pin.errors %}
+            {{ form.password.label }}<br>
+            {{ form.password }}
+            {% for error in form.password.errors %}
                 <span>{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.pin_repeat.label }}<br>
-            {{ form.pin_repeat }}
-            {% for error in form.pin_repeat.errors %}
+            {{ form.password2.label }}<br>
+            {{ form.password2 }}
+            {% for error in form.password2.errors %}
                 <span>{{ error }}</span>
             {% endfor %}
         </p>
