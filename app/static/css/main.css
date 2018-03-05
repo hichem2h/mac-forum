@@ -44,7 +44,7 @@ body {
   border: 2px solid #6d6d6d;
   border-radius: 5px;
 
-  background-color: #aeaeae;
+  background-color: #353535;
 
   padding: 14px;
   margin: 14px;
@@ -55,13 +55,8 @@ body {
 }
 
 .float-right li a:hover {
-    background-color: #353535;
+    background-color: #6d6d6d;
 }
-
-.float-right .active {
-  background-color: #353535
-}
-
 #sidebar {
   width: 25%;
   padding: 0;
@@ -80,4 +75,39 @@ body {
 
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
+}
+form {
+  width: 30%;
+  margin: 30px auto;
+  padding: 50px 100px;
+  border: 1px solid slategrey;
+  text-align: center;
+}
+
+form label {
+    color: #353535;
+    letter-spacing: 6px;
+}
+form #remember_me label {
+  letter-spacing:  0;
+  color: #4a52a1;
+}
+
+form span {
+  color: darkred;
+  font-size: 12px;
+}
+
+#flash {
+  display: block;
+  width: 100%;
+  background-color: #4a52a1;
+  padding: 2px;
+  text-align: center;
+  color: #dddddd;
+}
+
+h1 {
+  text-align: center;
+  color: darkslategrey;
 }
